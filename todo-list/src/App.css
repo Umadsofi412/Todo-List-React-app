@@ -38,3 +38,55 @@ h1 span{
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0,0.2)
 }
+.todo-list {
+  list-style-type: none;
+  overflow-y: auto;
+  max-height: 400px;
+  scrollbar-color: #333 #ff6666;
+  scrollbar-width: thin;
+}
+
+.todo {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  user-select: none;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0,0.2)
+}
+.actions {
+  display: flex;
+  gap: 1rem;
+}
+input,
+button{
+  font: inherit;
+}
+button{
+  cursor: pointer;
+  background: none;
+  padding: 0.25rem;
+  border: none;
+  color: #fff;
+}
+input{
+  padding: 0 0.5em;
+  height: 3rem;
+  width: 100%;
+}
+.todo-create{
+  margin-top: 1.5rem;
+}
+.todo-edit{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+.compeleted{
+  text-decoration: line-through;
+}

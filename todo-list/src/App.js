@@ -7,8 +7,8 @@ const App = () => {
 
   const createTodo = (title) =>{
     const newTodo = {id: crypto.randomUUID(),title:title, compeleted: false}
-    const UpdateTodos = [...todos,newTodo]
-    setTodos(UpdateTodos)
+    const UpdateTodos = [...todos,newTodo];
+    setTodos(UpdateTodos);
   }
   const removeTodo = (id) => {
     const UpdateTodos = todos.filter((todo) => todo.id !== id);
@@ -17,7 +17,7 @@ const App = () => {
   const changeTodo = (id, title,compeleted = false) => {
     const UpdateTodos = todos.map((todo) => {
       if(todo.id === id){
-        return{...todo, title, compeleted}
+        return{...todo, title, compeleted};
       }
       return todo;
     });
@@ -26,12 +26,13 @@ const App = () => {
     
 
   return (
-    <main className='main'>
+    <main className="main">
       <h1>React Todo</h1>
-      <TodoCreate createTodo = {createTodo} />
-      <TodoList  todos ={todos} removeTodo= {removeTodo} changeTodo = {changeTodo} />
+      <span>Streamline Your Day, the React Way!</span>
+      <TodoList todos={todos} removeTodo={removeTodo} changeTodo={changeTodo} />
+      <TodoCreate createTodo={createTodo} />
     </main>
-  )
-}
+  );
+};
 
 export default App;

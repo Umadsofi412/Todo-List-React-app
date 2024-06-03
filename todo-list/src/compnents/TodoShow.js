@@ -1,8 +1,9 @@
 import { useState } from "react";
 import TodoEdit from "./TodoEdit";
-
+import DeleteIcon from "../delete.svg";
+import EditIcon from '../edit.svg';
 const TodoShow = ({todo, removeTodo, changeTodo}) => {
-    const  [showEdit, setShowEdit] = useState(false)
+    const  [showEdit, setShowEdit] = useState(false);
     const handleDelete = (e) =>{
         removeTodo(todo.id)
     }
@@ -12,7 +13,7 @@ const TodoShow = ({todo, removeTodo, changeTodo}) => {
     const handleDoubleClick = (e) =>{
         changeTodo(todo.id,todo.title, !todo.compeleted)
     }
-    const handleSubmit = (e)=>{
+    const handleSubmit = (id,title )=>{
         changeTodo(id, title)
         setShowEdit(false)
     }
@@ -22,7 +23,7 @@ const TodoShow = ({todo, removeTodo, changeTodo}) => {
                 <TodoEdit todo ={todo} onSubmit ={handleSubmit}/>
             </li>
         );
-    }
+    };
     return(
         <li className="todo" onDoubleClick={handleDoubleClick}>
             <p className={todo.compeleted && 'completed'}>{todo.title}</p>

@@ -1,18 +1,18 @@
 import { useState } from "react";
 
 
-const TodoCreate = ({TodoCreate}) => {
-    const {title, setTitle} = useState('');
+const TodoCreate = ({createTodo}) => {
+    const [title, setTitle] = useState('');
 
     const handleChange = (e) => {
         setTitle(e.target.value)
-    }
+    };
     const handleSubmit = (e) => {
         e.preventDefault();
-        TodoCreate(title);
+        createTodo(title);
         setTitle('');
     
-    }
+    };
 
     return (
         <form onSubmit={handleSubmit} className="todo-create">
